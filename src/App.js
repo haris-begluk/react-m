@@ -19,13 +19,20 @@ class App extends Component {
     // Best place to make AJAX Calls And change state of component
   }
   handleIncrement = counter => {
-    console.log(counter);
+    //console.log(counter);
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
     this.setState({ counters });
     //console.log(counters[0].value);
+  };
+  handleDecrement = counter => {
+    const counters = [...this.state.counters];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].value--;
+    this.setState({ counters });
   };
   handleDelete = counterId => {
     //console.log("Delete handeled", counterId);
@@ -50,6 +57,7 @@ class App extends Component {
             counters={this.state.counters}
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
           />
         </main>
