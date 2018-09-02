@@ -15,7 +15,9 @@ class App extends Component {
       ]
     };
   }
-
+  componentDidMount() {
+    // Best place to make AJAX Calls And change state of component
+  }
   handleIncrement = counter => {
     console.log(counter);
     const counters = [...this.state.counters];

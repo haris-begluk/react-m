@@ -1,6 +1,15 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  componentDidUpdate(prevProps, prevState) {
+    //Function is called after component is updated!
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+  }
+  componentWillUnmount() {
+    //We can use this function for any kind of cleanup
+    console.log("Counter- Unmount");
+  }
   render() {
     //console.log("props", this.props);
     return (
